@@ -35,7 +35,7 @@ export default function App() {
 
 // echo "# practices" >> README.md
 // git init
-// git add README.md
+// git add .
 // git commit -m "first commit"
 // git branch -M main
 // git remote add origin https://github.com/bhaveshbl9697/practices.git
