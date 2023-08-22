@@ -37,6 +37,10 @@ export default function App() {
 }
 
 
+
+
+
+
 // echo "# practices" >> README.md
 // git init
 // git add README.md
@@ -48,6 +52,3 @@ export default function App() {
 // git remote add origin https://github.com/bhaveshbl9697/practices.git
 // git branch -M main
 // git push -u origin main
-
-
-
