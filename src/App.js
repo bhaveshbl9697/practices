@@ -1,47 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
-
-export default function App() {
-  const [tasks, setTasks] = useState([
-    { id: 5271, name: "record lecture", completed: false },
-    { id: 5272, name: "record react lecture", completed: true },
-    { id: 5273, name: "record javascript lecture", completed: false },
-  ]);
-  const [show, setShow] = useState(true);
-  console.log(setTasks);
-  function handleDelete(id) {
-    setTasks(tasks.filter((task) => id !== task.id));
-  }
+import { Header } from "./components/Header";
+import { TaskList } from "./components/TaskList";
+ function App() {
   return (
     <>
       <div className="App">
-        <h1> TASK LIST</h1>
-        <ul>
-          <button className="trigger" onClick={() => setShow(!show)}>
-            Toggle
-          </button>
-          {show &&
-            tasks.map((task) => (
-              <li
-                key={task.id}
-                className={task.completed ? "completed" : "incomplete"}
-              >
-                <span>
-                  {task.id} - {task.name}
-                </span>
-                <button
-                  onClick={() => handleDelete(task.id)}
-                  className="delete"
-                >
-                  delete
-                </button>
-              </li>
-            ))}
-        </ul>
+        <Header />
+        <TaskList />
       </div>
     </>
   );
 }
+export default App;
 
 // echo "# practices" >> README.md
 // git init
@@ -54,3 +25,5 @@ export default function App() {
 // git remote add origin https://github.com/bhaveshbl9697/practices.git
 // git branch -M main
 // git push -u origin main
+
+// git clone https://github.com/bhaveshbl9697/practices.git
