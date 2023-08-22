@@ -1,25 +1,53 @@
-import logo from './logo.svg';
+import React, {  useState } from 'react';
 import './App.css';
 
-function App() {
+export default function App() {
+  const [count, setCount] = useState(0);
+  // let count = 0;
+  function handleAdd() {
+    // count += 1;
+    // console.log(count);
+    setCount(count+1);
+  }
+  function handleSub() {
+      setCount(count - 1);
+  }
+  function handleReset() {
+    setCount(0);
+  }
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="App">
+        <div className="box">
+          <p>{count}</p>
+          <button className="add" onClick={handleAdd}>
+            ADD
+          </button>
+          <button className="sub" onClick={handleSub}>
+            SUB
+          </button>
+          <button className="reset" onClick={handleReset}>
+            RESET
+          </button>
+        </div>
+      </div>
+    </>
   );
 }
 
-export default App;
+
+// echo "# practices" >> README.md
+// git init
+// git add README.md
+// git commit -m "first commit"
+// git branch -M main
+// git remote add origin https://github.com/bhaveshbl9697/practices.git
+// git push -u origin main
+
+// git remote add origin https://github.com/bhaveshbl9697/practices.git
+// git branch -M main
+// git push -u origin main
+
+
+
