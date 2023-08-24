@@ -1,8 +1,8 @@
 import { BoxCard } from "./BoxCard";
 import { TaskCard } from "./TaskCard";
-import  {useState}  from "react";
-
-export const TaskList = ({info}) => {
+import { useState } from "react";
+import "./TaskList.css";
+export const TaskList = () => {
   const [tasks, setTasks] = useState([
     { id: 5271, name: "Record React Lectures", completed: true },
     { id: 7825, name: "Edit React Lectures", completed: false },
@@ -13,17 +13,24 @@ export const TaskList = ({info}) => {
   function handleDelete(id) {
     setTasks(tasks.filter((task) => task.id !== id));
   }
-
+  const styles = {
+    color: show ? "#3D8361" : "#be3434",
+    border: "1px solid ",
+    borderColor: show ? "#3D8361" : "#be3434",
+    borderRadius: "5px",
+    fontSize: "28px",
+    padding: "20px",
+  };
   return (
-    <>
-      <h1>Task List</h1>
+    <section className="taskList">
+      <h1 style={styles}>Task List</h1>
       <ul>
         <button className="trigger" onClick={() => setShow(!show)}>
-          Toggle
+          {show ? "Hide" : "Show"}
         </button>
         {show &&
           tasks.map((task) => (
-            <TaskCard key={task.id} info={info} task={task} handleDelete={handleDelete} />
+            <TaskCard key={task.id} task={task} handleDelete={handleDelete} />
           ))}
       </ul>
       <BoxCard result="success">
@@ -49,6 +56,6 @@ export const TaskList = ({info}) => {
           nulla?
         </p>
       </BoxCard>
-    </>
+    </section>
   );
 };
