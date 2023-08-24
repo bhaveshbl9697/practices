@@ -1,30 +1,22 @@
-import React from "react";
-import "./App.css";
+import { useState } from "react";
 import { Header } from "./components/Header";
-import { TaskList } from "./components/TaskList";
 import { Footer } from "./components/Footer";
-
+import { TaskList } from "./components/TaskList";
+import { AddTask } from "./components/AddTask";
+import "./App.css";
 function App() {
+  const [tasks, setTasks] = useState([]);
+
   return (
-      <div className="App">
-        <Header />
-        <TaskList  />
-        <Footer />
-      </div>
+    <div className="App">
+      <Header />
+      <main>
+        <AddTask tasks={tasks} setTasks={setTasks} />
+        <TaskList tasks={tasks} setTasks={setTasks} />
+      </main>
+      <Footer />
+    </div>
   );
 }
+
 export default App;
-
-// echo "# practices" >> README.md
-// git init
-// git add .
-// git commit -m "first commit"
-// git branch -M main
-// git remote add origin https://github.com/bhaveshbl9697/practices.git
-// git push -u origin main
-
-// git remote add origin https://github.com/bhaveshbl9697/practices.git
-// git branch -M main
-// git push -u origin main
-
-// git clone https://github.com/bhaveshbl9697/practices.git

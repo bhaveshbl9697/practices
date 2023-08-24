@@ -1,13 +1,11 @@
-import React from "react";
-import "./index.css";
-import * as serviceWorker from "./serviceWorker";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
 
-import { createRoot } from "react-dom/client";
-import App from "./App";
-
-createRoot(document.getElementById("root")).render(
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
 );
-serviceWorker.unregister();
