@@ -1,7 +1,7 @@
 {
   "name": "taskmate",
   "version": "0.1.0",
-  "homepage": "https://bhaveshbl9697.github.io/react-gh-pages",
+  "homepage": "https://bhaveshbl9697.github.io/practices",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
